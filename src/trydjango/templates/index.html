@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center mt-5">
+        <h1>!!! It's Django Time !!!</h1>
+        <div class="my-5">
+            {% if wow %}
+
+            <h1 style="color:darkblue;" class="mb-5">{{wow}}</h1>
+
+            {% endif %}
+            <h5><b>
+                Welcome Back! <span style="color: red;">{{name}}</span>
+            </b></h5>
+        </div>
+        <form action="add" method="post">
+
+            {% csrf_token %}
+
+            <input type="text" name="num1" placeholder="1st Number"><br>
+            <input class="mt-2" type="text" name="num2" placeholder="2nd Number"><br>
+            <input class="mt-2 btn btn-success" type="submit" value="Done">
+        </form>
+    </div>
+{% endblock %}
